@@ -23,4 +23,17 @@ describe 'User creates account' do
 
     expect(page).to have_content 'Você realizou seu registro com sucesso!'
   end
+
+  it 'and leaves fields empty' do
+    visit root_path
+    click_on 'Sign up'
+
+    fill_in 'Nome de usuário', with: ''
+    fill_in 'E-mail', with: 'user@mail.com'
+    fill_in 'Senha', with: 'password'
+    fill_in 'Confirme sua senha', with: 'password'
+    click_on 'Sign up'
+
+    expect(page).to have_content 'Nome de usuário não pode ficar em branco'
+  end
 end
