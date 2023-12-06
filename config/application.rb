@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 module RepertoireManager
   class Application < Rails::Application
+    config.i18n.default_locale = :'pt-BR'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -38,5 +39,9 @@ module RepertoireManager
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.action_view.field_error_proc = proc do |html_tag, instance|
+      html_tag.html_safe
+    end
   end
 end
