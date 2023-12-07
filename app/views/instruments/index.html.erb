@@ -1,0 +1,7 @@
+<%= link_to 'Cadastrar novo instrumento', new_instrument_path %>
+
+<ul>
+  <% @instruments.each do |i| %>
+    <li><%= i.name.capitalize %></li>
+  <% end %>
+</ul>
