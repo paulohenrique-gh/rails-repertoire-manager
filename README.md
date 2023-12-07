@@ -1,24 +1,25 @@
-# README
+# Repertoire Manager 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versão Ruby: 3.2.1
 
-Things you may want to cover:
+Versão Rails: 7.1.2
 
-* Ruby version
+Instalar dependências:
+```
+bundle install
+```
 
-* System dependencies
+Criar o banco de dados:
+```
+rails db:migrate
+```
 
-* Configuration
+Iniciar o servidor:
+```
+rails server
+```
 
-* Database creation
+Porta padrão: [3000](http://localhost:3000)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Cadastro de usuário
+Para acessar qualquer funcionalidade, é necessário criar uma conta de usuário. O cadastro é feito com nome de usuário, e-mail e senha.
