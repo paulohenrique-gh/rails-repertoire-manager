@@ -1,6 +1,8 @@
 <div class="container w-50">
   <h1 class="text-center mb-5">Cadastro de instrumento</h1>
-  
+
+  <div class="text-center mb-5"><%= render partial: 'shared/error_messages', locals: { resource: @instrument } %></div>
+
   <%= form_with model: @instrument do |f| %>
     <div class="field row mb-5">
       <div class="col-5 col-form-label">

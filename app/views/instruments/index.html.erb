@@ -1,7 +1,15 @@
-<%= link_to 'Cadastrar novo instrumento', new_instrument_path %>
+<h1 class="text-center mb-5">Instrumentos Cadastrados</h1>
 
-<ul>
-  <% @instruments.each do |i| %>
-    <li><%= i.name.capitalize %></li>
-  <% end %>
-</ul>
+<% if @instruments.any? %>
+  <ul class="instrument-list">
+    <% @instruments.each do |i| %>
+      <li><%= i.name.capitalize %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p class="text-center mb-5">Nenhum instrumento cadastrado</p>
+<% end %>
+<div class="text-center mb-5">
+  <%= link_to 'Cadastrar novo instrumento', new_instrument_path,
+              class: 'btn btn-outline-success btn-sm' %>
+</div>

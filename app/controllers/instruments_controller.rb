@@ -10,8 +10,12 @@ class InstrumentsController < ApplicationController
   def create
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
-    @instrument.save
-    redirect_to instruments_path, notice: 'Instrumento cadastrado com sucesso'
+    if @instrument.save
+      redirect_to instruments_path, notice: 'Instrumento cadastrado com sucesso'
+    else
+      flash.now[:alert] = 'Não foi possível cadastrar instrumento'
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

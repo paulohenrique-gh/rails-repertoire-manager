@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      instrument:
+        one: 'Instrumento'
+        other: 'Instrumentos'
+    attributes:
+      instrument:
+        name: 'Nome do instrumento'
