@@ -3,7 +3,7 @@
 <% if @instruments.any? %>
   <ul class="instrument-list">
     <% @instruments.each do |i| %>
-      <li><%= i.name.capitalize %></li>
+      <li><%= link_to i.name.capitalize, i %></li>
     <% end %>
   </ul>
 <% else %>

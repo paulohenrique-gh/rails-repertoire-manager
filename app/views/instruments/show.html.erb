@@ -1,0 +1,11 @@
+<div>
+  <strong>Instrumento: </strong><%= @instrument.name.capitalize %>
+</div>
+<div>
+  <strong>Data de registro: </strong><%= l(@instrument.created_at.to_date) %>
+</div>
+<div>
+  <strong>Data da última atualização: </strong><%= l(@instrument.updated_at.to_date) %>
+</div>
+
+<%= link_to 'Editar', edit_instrument_path(@instrument) %>

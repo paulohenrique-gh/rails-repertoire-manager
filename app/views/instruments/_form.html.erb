@@ -1,0 +1,20 @@
+<%= form_with model: @instrument do |f| %>
+  <div class="field row mb-5">
+    <div class="col-5 col-form-label">
+      <%= f.label :name, 'Nome do instrumento' %>
+    </div>
+    <div class="col-7">
+      <div>
+        <%= f.text_field :name, required: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mb-5">
+    <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Voltar', instruments_path %>
+  </div>
+<% end %>

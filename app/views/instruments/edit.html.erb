@@ -1,0 +1,10 @@
+<div class="container w-50">
+  <h1 class="text-center mb-5">Edição de instrumento</h1>
+
+  <div class="text-center mb-5">
+    <%= render partial: 'shared/error_messages',
+               locals: { resource: @instrument } %>
+  </div>
+
+  <%= render 'form' %>  
+</div>

@@ -3,6 +3,10 @@ class InstrumentsController < ApplicationController
     @instruments = current_user.instruments
   end
 
+  def show
+    @instrument = Instrument.find(params[:id])
+  end
+
   def new
     @instrument = Instrument.new
   end
@@ -16,6 +20,16 @@ class InstrumentsController < ApplicationController
       flash.now[:alert] = 'Não foi possível cadastrar instrumento'
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @instrument = Instrument.find(params[:id])
+  end
+
+  def update
+    @instrument = Instrument.find(params[:id])
+    @instrument.update(instrument_params)
+    redirect_to instruments_path, notice: 'Instrumento atualizado com sucesso'
   end
 
   private
