@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_07_141208) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_10_135719) do
   create_table "instruments", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_instruments_on_user_id"
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.string "name"
+    t.integer "start_year"
+    t.integer "end_year"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_periods_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +44,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_141208) do
   end
 
   add_foreign_key "instruments", "users"
+  add_foreign_key "periods", "users"
 end

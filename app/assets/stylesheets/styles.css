@@ -1,4 +1,4 @@
-.instrument-list {
+.instrument-list, .period-list {
   min-height: 600px;
   columns: 2;
   list-style: none

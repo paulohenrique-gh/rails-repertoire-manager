@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :instruments
+  has_many :periods
 
   validates :user_name, presence: true
 end
