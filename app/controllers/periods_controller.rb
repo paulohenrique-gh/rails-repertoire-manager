@@ -3,6 +3,10 @@ class PeriodsController < ApplicationController
     @periods = current_user.periods
   end
 
+  def show
+    @period = Period.find(params[:id])
+  end
+
   def new
     @period = Period.new
   end
@@ -10,8 +14,12 @@ class PeriodsController < ApplicationController
   def create
     @period = Period.new(period_params)
     @period.user = current_user
-    @period.save
-    redirect_to periods_path, notice: 'Período cadastrado com sucesso'
+    if @period.save
+      redirect_to periods_path, notice: 'Período cadastrado com sucesso'
+    else
+      flash.now[:alert] = 'Não foi possível cadastrar período'
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :instruments, only: [:index, :show, :new, :create, :edit, :update]
-  resources :periods, only: [:index, :show, :new, :create]
+  resources :periods, only: [:index, :show, :new, :create, :edit]
 end

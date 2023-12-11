@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      period:
+        one: 'Período'
+        other: 'Períodos'
+    attributes:
+      period:
+        name: 'Nome do período'
+        start_year: 'Ano aproximado de início'
+        end_year: 'Ano aproximado de término'
+        notes: 'Notas'

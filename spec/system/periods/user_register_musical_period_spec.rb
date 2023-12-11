@@ -35,4 +35,21 @@ describe 'User registers musical period' do
     expect(page).to have_content 'Período cadastrado com sucesso'
     expect(page).to have_content 'Clássico (1730 - 1820)'
   end
+
+  it 'and leaves required fields empty' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+
+    login_as user
+    visit new_period_path
+    fill_in 'Nome do período', with: ''
+    fill_in 'Ano aproximado de início', with: ''
+    fill_in 'Ano aproximado de término', with: ''
+    click_on 'Enviar'
+
+    expect(page).to have_content 'Não foi possível cadastrar período'
+    expect(page).to have_content 'Nome do período não pode ficar em branco'
+    expect(page).to have_content 'Ano aproximado de início não pode ficar em branco'
+    expect(page).to have_content 'Ano aproximado de término não pode ficar em branco'
+  end
 end
