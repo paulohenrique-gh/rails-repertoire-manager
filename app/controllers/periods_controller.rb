@@ -1,5 +1,6 @@
 class PeriodsController < ApplicationController
   before_action :set_period, only: [:show, :edit, :update]
+  before_action :authorize_user, only: [:show, :edit, :update]
 
   def index
     @periods = current_user.periods
@@ -43,5 +44,9 @@ class PeriodsController < ApplicationController
 
   def period_params
     params.require(:period).permit(:name, :start_year, :end_year, :notes)
+  end
+
+  def authorize_user
+    redirect_to root_path unless @period.user == current_user
   end
 end

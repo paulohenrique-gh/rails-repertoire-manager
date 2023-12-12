@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
   before_action :set_instrument, only: [:show, :edit, :update]
+  before_action :authorize_user, only: [:show, :edit, :update]
 
   def index
     @instruments = current_user.instruments
@@ -43,5 +44,9 @@ class InstrumentsController < ApplicationController
 
   def instrument_params
     params.require(:instrument).permit(:name)
+  end
+
+  def authorize_user
+    redirect_to root_path unless @instrument.user == current_user
   end
 end
