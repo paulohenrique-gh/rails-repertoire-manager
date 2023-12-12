@@ -20,4 +20,14 @@ describe 'User views instrument details page' do
     )
     expect(page).to have_link 'Editar'
   end
+
+  it 'and is not authenticated' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+    instrument = Instrument.create!(name: 'Guitarra', user: user)
+
+    visit instrument_path(instrument)
+
+    expect(current_path).to eq new_user_session_path
+  end
 end

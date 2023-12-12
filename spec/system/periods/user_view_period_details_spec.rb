@@ -25,4 +25,15 @@ describe 'User views period details' do
     )
     expect(page).to have_link 'Editar'
   end
+
+  it 'and is not authenticated' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1820,
+                            notes: 'Período de Beethoven e Mozart', user: user)
+
+    visit period_path(period)
+
+    expect(current_path).to eq new_user_session_path
+  end
 end

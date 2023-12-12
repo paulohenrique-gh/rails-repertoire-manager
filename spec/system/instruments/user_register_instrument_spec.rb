@@ -42,4 +42,10 @@ describe 'User registers new instrument' do
     expect(page).to have_content 'Não foi possível cadastrar instrumento'
     expect(page).to have_content 'Nome do instrumento não pode ficar em branco'
   end
+
+  it 'and is not authenticated' do
+    visit new_instrument_path
+
+    expect(current_path).to eq new_user_session_path
+  end
 end

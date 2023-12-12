@@ -35,4 +35,15 @@ describe 'User edits period' do
     expect(page).to have_content 'Não foi possível atualizar período'
     expect(period.name).to eq 'Clássico'
   end
+
+  it 'and is not authenticated' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1820,
+                            user: user)
+
+    visit edit_period_path(period)
+
+    expect(current_path).to eq new_user_session_path
+  end
 end

@@ -52,4 +52,10 @@ describe 'User registers musical period' do
     expect(page).to have_content 'Ano aproximado de início não pode ficar em branco'
     expect(page).to have_content 'Ano aproximado de término não pode ficar em branco'
   end
+
+  it 'and is not authenticated' do
+    visit new_period_path
+
+    expect(current_path).to eq new_user_session_path
+  end
 end

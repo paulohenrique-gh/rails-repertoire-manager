@@ -34,4 +34,15 @@ describe 'User edits registered instrument' do
     expect(page).to have_content 'Não foi possível atualizar instrumento'
     expect(instrument.name).to eq 'Piano'
   end
+
+  it 'and is not authenticated' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+
+    instrument = Instrument.create!(name: 'Piano', user: user)
+
+    visit edit_instrument_path(instrument)
+
+    expect(current_path).to eq new_user_session_path
+  end
 end
