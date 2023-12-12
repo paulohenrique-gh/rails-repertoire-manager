@@ -10,3 +10,10 @@ pt-BR:
         start_year: 'Ano aproximado de início'
         end_year: 'Ano aproximado de término'
         notes: 'Notas'
+  periods:
+    create:
+      success: 'Período cadastrado com sucesso'
+      failure: 'Não foi possível cadastrar período'
+    update:
+      success: 'Período atualizado com sucesso'
+      failure: 'Não foi possível atualizar período'

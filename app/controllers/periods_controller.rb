@@ -15,10 +15,24 @@ class PeriodsController < ApplicationController
     @period = Period.new(period_params)
     @period.user = current_user
     if @period.save
-      redirect_to periods_path, notice: 'Período cadastrado com sucesso'
+      redirect_to periods_path, notice: t('.success')
     else
-      flash.now[:alert] = 'Não foi possível cadastrar período'
+      flash.now[:alert] = t('.failure')
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @period = Period.find(params[:id])
+  end
+
+  def update
+    @period = Period.find(params[:id])
+    if @period.update(period_params)
+      redirect_to periods_path, notice: t('.success')
+    else
+      flash.now[:alert] = t('.failure')
+      render :edit, status: :unprocessable_entity
     end
   end
 

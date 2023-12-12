@@ -1,0 +1,53 @@
+<%= form_with model: period do |f| %>
+  <div class="row mb-3">
+    <div class="col-5 col-form-label">
+      <%= f.label :name, 'Nome do período' %>
+    </div>
+    <div class="col-7">
+      <div>
+        <%= f.text_field :name, class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-5 col-form-label">
+      <%= f.label :start_year, 'Ano aproximado de início' %>
+    </div>
+    <div class="col-7">
+      <div>
+        <%= f.number_field :start_year, class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-5 col-form-label">
+      <%= f.label :end_year, 'Ano aproximado de término' %>
+    </div>
+    <div class="col-7">
+      <div>
+        <%= f.number_field :end_year, class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-5 col-form-label">
+      <%= f.label :notes, 'Notas' %>
+    </div>
+    <div class="col-7">
+      <div>
+        <%= f.text_area :notes, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mb-5">
+    <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Voltar', periods_path %>
+  </div>
+<% end %>  

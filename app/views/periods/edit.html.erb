@@ -1,10 +1,10 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Cadastro de período</h1>
+  <h1 class="text-center mb-5">Edição de período</h1>
 
   <div class="text-center mb-5">
-    <%= render partial: 'shared/error_messages',
+    <%= render partial: 'shared/error_messages', 
                locals: { resource: @period } %>
   </div>
-  
+
   <%= render partial: 'form', locals: { period: @period } %>
 </div>
