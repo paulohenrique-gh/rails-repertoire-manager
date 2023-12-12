@@ -1,10 +1,11 @@
 class PeriodsController < ApplicationController
+  before_action :set_period, only: [:show, :edit, :update]
+
   def index
     @periods = current_user.periods
   end
 
   def show
-    @period = Period.find(params[:id])
   end
 
   def new
@@ -23,11 +24,9 @@ class PeriodsController < ApplicationController
   end
 
   def edit
-    @period = Period.find(params[:id])
   end
 
   def update
-    @period = Period.find(params[:id])
     if @period.update(period_params)
       redirect_to periods_path, notice: t('.success')
     else
@@ -37,6 +36,10 @@ class PeriodsController < ApplicationController
   end
 
   private
+
+  def set_period
+    @period = Period.find(params[:id])
+  end
 
   def period_params
     params.require(:period).permit(:name, :start_year, :end_year, :notes)

@@ -7,3 +7,10 @@ pt-BR:
     attributes:
       instrument:
         name: 'Nome do instrumento'
+  instruments:
+    create:
+      success: 'Instrumento cadastrado com sucesso'
+      failure: 'Não foi possível cadastrar instrumento'
+    update:
+      success: 'Instrumento atualizado com sucesso'
+      failure: 'Não foi possível atualizar instrumento'
