@@ -1,0 +1,25 @@
+<div class="container w-50">
+  <h1 class="text-center mb-5">Cadastro de compositor</h1>
+
+  <div class="text-center mb-5">
+    <%= render partial: 'shared/error_messages',
+               locals: { resource: @instrument } %>
+  </div>
+
+  <%= form_with model: @composer do |f| %>
+    <div class="row mb-5">
+      <div class="col-5 col-form-label">
+        <%= f.label :name, 'Nome' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_field :name, required: true, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      
+    </div>
+  <% end %>
+</div>

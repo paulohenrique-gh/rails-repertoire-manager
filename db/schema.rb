@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_10_135719) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_13_010535) do
+  create_table "composers", force: :cascade do |t|
+    t.string "name"
+    t.text "notes"
+    t.integer "period_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["period_id"], name: "index_composers_on_period_id"
+    t.index ["user_id"], name: "index_composers_on_user_id"
+  end
+
   create_table "instruments", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -43,6 +54,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_10_135719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "composers", "periods"
+  add_foreign_key "composers", "users"
   add_foreign_key "instruments", "users"
   add_foreign_key "periods", "users"
 end
