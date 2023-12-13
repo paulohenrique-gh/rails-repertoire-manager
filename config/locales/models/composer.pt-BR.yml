@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      composer:
+        one: 'Compositor'
+        other: 'Compositores'
+    attributes:
+      composer:
+        name: 'Nome'
+        period: 'Período'
+        notes: 'Notas'
+  composers:
+    create:
+      success: 'Compositor cadastrado com sucesso'
+      failure: 'Não foi possível cadastrar instrumento'
+    update:
+      success: 'Instrumento atualizado com sucesso'
+      failure: 'Não foi possível atualizar instrumento'

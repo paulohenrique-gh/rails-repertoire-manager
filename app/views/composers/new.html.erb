@@ -3,11 +3,11 @@
 
   <div class="text-center mb-5">
     <%= render partial: 'shared/error_messages',
-               locals: { resource: @instrument } %>
+               locals: { resource: @composer } %>
   </div>
 
   <%= form_with model: @composer do |f| %>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-5 col-form-label">
         <%= f.label :name, 'Nome' %>
       </div>
@@ -18,8 +18,34 @@
       </div>
     </div>
 
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :period_id, 'Período' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.collection_select :period_id, Period.all.order(:name), :id, :name %>
+        </div>
+      </div>
+    </div>
+
     <div class="row mb-5">
-      
+      <div class="col-5 col-form-label">
+        <%= f.label :notes, 'Notas' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_area :notes, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-5">
+      <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+    </div>
+
+    <div class="text-center">
+      <%= link_to 'Voltar', composers_path %>
     </div>
   <% end %>
 </div>

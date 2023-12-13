@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :instruments
   has_many :periods
+  has_many :composers
 
   validates :user_name, presence: true
 end
