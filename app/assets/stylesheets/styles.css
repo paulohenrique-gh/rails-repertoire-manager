@@ -1,4 +1,4 @@
-.instrument-list, .period-list {
+.instrument-list, .period-list, .composer-list {
   min-height: 600px;
   columns: 2;
   list-style: none

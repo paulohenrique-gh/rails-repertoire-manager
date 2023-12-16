@@ -34,4 +34,19 @@ feature 'User registers composer' do
     expect(page).to have_content 'Ludwig Van Beethoven'
     expect(user.composers.count).to eq 1
   end
+
+  scenario 'and leaves empty fields' do
+    user = User.create!(user_name: 'user', email: 'user@mail.com',
+                        password: 'password')
+    user.periods.create!(name: 'Clássico', start_year: 1730, end_year: 1820)
+
+    login_as user
+    visit new_composer_path
+    fill_in 'Nome', with: ''
+    click_on 'Enviar'
+
+    expect(page).to have_content 'Não foi possível cadastrar compositor'
+    expect(page).to have_content 'Nome não pode ficar em branco'
+    expect(user.composers.count).to eq 0
+  end
 end

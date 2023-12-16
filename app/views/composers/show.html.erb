@@ -1,0 +1,12 @@
+<div class="container w-50">
+  <h1 class="text-center mb-5">Detalhes do compositor</h1>
+
+  <div class="mb-5">
+    <%= @composer.name.titleize %>
+  </div>
+
+  <div class="text-center mb-5">
+    <%= link_to 'Editar', edit_composer_path(@composer),
+                class: 'btn btn-outline-success' %>
+  </div>
+</div>

@@ -12,7 +12,7 @@ pt-BR:
   composers:
     create:
       success: 'Compositor cadastrado com sucesso'
-      failure: 'Não foi possível cadastrar instrumento'
+      failure: 'Não foi possível cadastrar compositor'
     update:
-      success: 'Instrumento atualizado com sucesso'
-      failure: 'Não foi possível atualizar instrumento'
+      success: 'Compositor atualizado com sucesso'
+      failure: 'Não foi possível atualizar compositor'

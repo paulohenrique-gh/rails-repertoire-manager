@@ -1,11 +1,14 @@
 <h1 class="text-center mb-5">Compositores Cadastrados</h1>
 
 <ul class="composer-list">
-  <%= @composers.each do |c| %>
+  <% @composers.each do |c| %>
     <li>
-      <% c.name.titleize %>
+      <%= link_to c.name.titleize, c %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Cadastrar novo compositor', new_composer_path %>
+<div class="text-center mb-5">
+  <%= link_to 'Cadastrar novo compositor', new_composer_path,
+              class: 'btn btn-outline-success btn-sm' %>
+</div>
