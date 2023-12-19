@@ -1,4 +1,7 @@
 class ComposersController < ApplicationController
+  before_action :set_composer, only: [:show, :edit, :update]
+  before_action :authorize_user, only: [:show, :edit, :update]
+
   def index
     @composers = current_user.composers
   end
@@ -39,5 +42,13 @@ class ComposersController < ApplicationController
 
   def composer_params
     params.require(:composer).permit(:name, :period_id, :notes)
+  end
+
+  def set_composer
+    @composer = Composer.find(params[:id])
+  end
+
+  def authorize_user
+    redirect_to root_path unless @composer.user == current_user
   end
 end
