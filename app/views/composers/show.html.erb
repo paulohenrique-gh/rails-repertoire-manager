@@ -2,11 +2,23 @@
   <h1 class="text-center mb-5">Detalhes do compositor</h1>
 
   <div class="mb-5">
-    <%= @composer.name.titleize %>
+    <div>
+      <strong>Nome: </strong><%= @composer.name.titleize %>
+    </div>
+    <div>
+      <strong>Período: </strong><%= @composer.period.name %>
+    </div>
+    <% if @composer.notes.present? %>
+      <strong>Notas: </strong><%= @composer.notes %>
+    <% end %>
   </div>
 
   <div class="text-center mb-5">
     <%= link_to 'Editar', edit_composer_path(@composer),
                 class: 'btn btn-outline-success' %>
+  </div>
+
+  <div class="text-center mb-5">
+    <%= link_to 'Voltar', composers_path %>
   </div>
 </div>

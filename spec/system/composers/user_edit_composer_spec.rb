@@ -4,7 +4,7 @@ describe 'User edits composer' do
   it 'successfully' do
     user = User.create!(user_name: 'user', email: 'user@mail.com',
                         password: 'password')
-    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1720,
+    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1820,
                             user: user)
     composer = Composer.create!(name: 'Mozart', period: period, user: user)
 
@@ -24,7 +24,7 @@ describe 'User edits composer' do
   it 'and leaves empty field' do
     user = User.create!(user_name: 'user', email: 'user@mail.com',
                         password: 'password')
-    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1720,
+    period = Period.create!(name: 'Clássico', start_year: 1730, end_year: 1820,
                             user: user)
     composer = Composer.create!(name: 'Mozart', period: period, user: user)
 

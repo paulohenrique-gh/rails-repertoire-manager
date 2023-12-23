@@ -1,12 +1,16 @@
 <h1 class="text-center mb-5">Compositores Cadastrados</h1>
 
-<ul class="composer-list">
-  <% @composers.each do |c| %>
-    <li>
-      <%= link_to c.name.titleize, c %>
-    </li>
-  <% end %>
-</ul>
+<% if @composers.any? %>
+  <ul class="composer-list">
+    <% @composers.each do |c| %>
+      <li>
+        <%= link_to c.name.titleize, c %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p class="text-center mb-5">Nenhum compositor cadastrado</p>
+<% end %>
 
 <div class="text-center mb-5">
   <%= link_to 'Cadastrar novo compositor', new_composer_path,
