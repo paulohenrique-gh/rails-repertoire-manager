@@ -1,0 +1,121 @@
+<div class="container w-50">
+  <h1 class="text-center mb-5">Cadastro de música</h1>
+
+  <div class="text-center mb-5">
+    <%= render partial: 'shared/error_messages',
+               locals: { resource: @piece } %>
+  </div>
+
+  <%= form_with model: @piece do |f| %>
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :title, 'Título' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_field :title, class: 'form-control', required: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :opus, 'Opus' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_field :opus, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :number, 'Número' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.number_field :number, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :movement, 'Movimento' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.number_field :movement, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :other_identifiers, 'Outros identificadores' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_field :other_identifiers, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :composer_id, 'Compositor' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.collection_select :composer_id, @composers, :id, :name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :period_id, 'Período' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.collection_select :period_id, @periods, :id, :name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :instrument_id, 'Instrumento' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.collection_select :instrument_id, @instruments, :id, :name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :start_date, 'Data inicial' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.date_field :start_date, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :finish_date, 'Data final' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.date_field :finish_date, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
