@@ -5,4 +5,8 @@ class Composer < ApplicationRecord
   has_many :pieces
 
   validates :name, presence: true
+
+  def title_name
+    name.titleize
+  end
 end

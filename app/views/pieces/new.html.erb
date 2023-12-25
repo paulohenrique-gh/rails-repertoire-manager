@@ -68,7 +68,7 @@
       </div>
       <div class="col-7">
         <div>
-          <%= f.collection_select :composer_id, @composers, :id, :name %>
+          <%= f.collection_select :composer_id, @composers, :id, :title_name %>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
       </div>
       <div class="col-7">
         <div>
-          <%= f.collection_select :period_id, @periods, :id, :name %>
+          <%= f.collection_select :period_id, @periods, :id, :title_name %>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
       </div>
       <div class="col-7">
         <div>
-          <%= f.collection_select :instrument_id, @instruments, :id, :name %>
+          <%= f.collection_select :instrument_id, @instruments, :id, :title_name %>
         </div>
       </div>
     </div>
@@ -115,6 +115,25 @@
           <%= f.date_field :finish_date, class: 'form-control' %>
         </div>
       </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-5 col-form-label">
+        <%= f.label :difficulty_level, 'Nível de dificuldade' %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.number_field :difficulty_level, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-5">
+      <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+    </div>
+
+    <div class="text-center">
+      <%= link_to 'Voltar', root_path %>
     </div>
   <% end %>
 </div>

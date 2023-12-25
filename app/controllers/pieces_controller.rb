@@ -1,9 +1,8 @@
 class PiecesController < ApplicationController
   def new
     @piece = Piece.new
-    @composers = Composer.order(:name)
-    @periods = Period.order(:name)
-    @instruments = Instrument.order(:name).each { |i| i.name.capitalize }
-    debugger
+    @composers = current_user.composers.order(:name)
+    @periods = current_user.periods.order(:name)
+    @instruments = current_user.instruments.order(:name)
   end
 end

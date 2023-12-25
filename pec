@@ -1,0 +1,126 @@
+[33mcommit de8c14768e5c668e8bde660e6d992682b043d594[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Sun Dec 24 10:36:07 2023 -0300
+
+    WIP form for registering pieces
+
+[33mcommit ca09ca8a8bf860a1249a127edb03705d6251f25c[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Sat Dec 23 11:15:50 2023 -0300
+
+    Add composer show page and specs
+
+[33mcommit 687e6410a191ac0a004f4c3fbe14cfa1726fddb9[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 19 20:56:18 2023 -0300
+
+    Add specs
+
+[33mcommit 61168b85dc09d93acb9320b28d477f82c972c67c[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Sat Dec 16 17:12:21 2023 -0300
+
+    Add form for editing composer information
+
+[33mcommit 241f77d16361d3bd7a49c829f7209f6d162e8fa3[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Wed Dec 13 11:30:40 2023 -0300
+
+    Add composer registration form
+
+[33mcommit e6cc37813c2274e6aec6ded578e9f5ff0beea840[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 12 22:21:00 2023 -0300
+
+    WIP composer form
+
+[33mcommit 87945933251634762dc382619e05eed0f839076b[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 12 16:41:02 2023 -0300
+
+    Add request specs
+
+[33mcommit bdab2e1c114eec19d5b3d5412a344487456deed6[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 12 12:02:24 2023 -0300
+
+    Add specs
+
+[33mcommit a4770146d37fcc66d15c729bf5f2c53075a3738e[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 12 11:22:52 2023 -0300
+
+    Add instrument spec
+    
+    Extract repeated code into private methods in instruments and periods
+    controllers
+
+[33mcommit 1fca24eac011d4330081a6ce40a12f987c25d0e9[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 12 10:55:13 2023 -0300
+
+    Add edit form for periods
+    
+    Refactor periods and instruments forms into partial views
+
+[33mcommit 16dab030d38c878828c9c3d9ba2fd66f6055abf9[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Mon Dec 11 11:19:27 2023 -0300
+
+    WIP Period editing form
+
+[33mcommit a3c7825a617cc092cd43f9ce7db7a0fb7d5a924c[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Sun Dec 10 11:05:29 2023 -0300
+
+    Add form for period registration
+
+[33mcommit eee7e12dc720fc21331f81ebb0847d1a02873230[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Fri Dec 8 21:53:37 2023 -0300
+
+    Add route for editing instruments
+
+[33mcommit df95ac6adfb80cdc05b9c5dcdc53e2902207ecb8[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Fri Dec 8 10:37:50 2023 -0300
+
+    Add index for registered instruments
+
+[33mcommit 25b36a863540460f7bd6e8d966303410ce8e94f0[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Thu Dec 7 11:25:31 2023 -0300
+
+    Add new instrument form
+
+[33mcommit 991fee1e13769b5adeffa66a0c0269ca4d1a1fd9[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Thu Dec 7 09:14:55 2023 -0300
+
+    Update README.md
+
+[33mcommit e9ed39ed4e4d06fcfc446a97e1e97ae52101cfc1[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Wed Dec 6 14:38:22 2023 -0300
+
+    Add user sign in form
+    
+    User can now sign up and sign in
+
+[33mcommit b85d6ec450caa2fd0bac53997f9219627794dcef[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 5 21:38:40 2023 -0300
+
+    Add user sign-up form
+
+[33mcommit 52972f1ffcdbda4ead930b602d826871a1d15dcf[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 5 19:38:14 2023 -0300
+
+    Include RSpec, Capybara, Devise
+
+[33mcommit a42441dec23f8e5bdd5788cf6aeccfc99d692e05[m
+Author: Paulo Henrique de Meneses Oliveira <ph.1928@hotmail.com>
+Date:   Tue Dec 5 19:23:00 2023 -0300
+
+    Initial setup
