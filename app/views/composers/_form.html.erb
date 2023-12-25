@@ -1,7 +1,7 @@
 <%= form_with model: composer do |f| %>
   <div class="row mb-3">
     <div class="col-5 col-form-label">
-      <%= f.label :name, 'Nome' %>
+      <%= f.label :name %>
     </div>
     <div class="col-7">
       <div>
@@ -12,18 +12,18 @@
 
   <div class="row mb-3">
     <div class="col-5 col-form-label">
-      <%= f.label :period_id, 'Período' %>
+      <%= f.label :period_id %>
     </div>
     <div class="col-7">
       <div>
-        <%= f.collection_select :period_id, Period.all.order(:name), :id, :name %>
+        <%= f.collection_select :period_id, Period.all.order(:name), :id, :title_name %>
       </div>
     </div>
   </div>
 
   <div class="row mb-5">
     <div class="col-5 col-form-label">
-      <%= f.label :notes, 'Notas' %>
+      <%= f.label :notes %>
     </div>
     <div class="col-7">
       <div>
@@ -33,6 +33,6 @@
   </div>
 
   <div class="text-center mb-5">
-    <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+    <%= f.submit t('helpers.submit.submit'), class: 'btn btn-outline-success' %>
   </div>
 <% end %>

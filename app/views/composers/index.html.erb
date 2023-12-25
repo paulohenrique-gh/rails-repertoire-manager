@@ -1,4 +1,4 @@
-<h1 class="text-center mb-5">Compositores Cadastrados</h1>
+<h1 class="text-center mb-5"><%= Composer.model_name.human(count: :other) %> Cadastrados</h1>
 
 <% if @composers.any? %>
   <ul class="composer-list">
@@ -9,7 +9,7 @@
     <% end %>
   </ul>
 <% else %>
-  <p class="text-center mb-5">Nenhum compositor cadastrado</p>
+  <p class="text-center mb-5">Nenhum <%= Composer.model_name.human.downcase %> cadastrado</p>
 <% end %>
 
 <div class="text-center mb-5">

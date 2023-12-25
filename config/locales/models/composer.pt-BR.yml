@@ -8,6 +8,7 @@ pt-BR:
       composer:
         name: 'Nome'
         period: 'Período'
+        period_id: 'Período'
         notes: 'Notas'
   composers:
     create:

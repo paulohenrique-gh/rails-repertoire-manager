@@ -1,10 +1,10 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Edição de compositor</h1>
+  <h1 class="text-center mb-5">Edição de <%= Composer.model_name.human.downcase %></h1>
   
   <%= render partial: 'form', locals: { composer: @composer } %>
   
   
   <div class="text-center">
-    <%= link_to 'Voltar', composers_path %>
+    <%= link_to t('helpers.back'), composers_path %>
   </div>
 </div>
