@@ -1,17 +1,21 @@
-<h1 class="text-center mb-5">Períodos Cadastrados</h1>
+<h1 class="text-center mb-5">
+  <%= Period.model_name.human(count: :other) %> Cadastrados
+</h1>
 
 <% if @periods.any? %>
   <ul class="period-list">
     <% @periods.each do |p| %>
       <li>
-        <%= link_to "#{p.name.capitalize} (#{p.start_year} - #{p.end_year})", p %>
+        <%= link_to "#{p.name.titleize} (#{p.start_year} - #{p.end_year})", p %>
       </li>
     <% end %>
   </ul>
 <% else%>
-  <p class="text-center mb-5">Nenhum período cadastrado</p>
+  <p class="text-center mb-5">
+    Nenhum <%= Period.model_name.human.downcase %> cadastrado
+  </p>
 <% end %>
 <div class="text-center mb-5">
-  <%= link_to 'Cadastrar novo período', new_period_path, 
+  <%= link_to t('.new'), new_period_path, 
               class: 'btn btn-outline-success btn-sm' %>
 </div>

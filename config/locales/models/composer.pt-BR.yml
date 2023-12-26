@@ -17,3 +17,5 @@ pt-BR:
     update:
       success: 'Compositor atualizado com sucesso'
       failure: 'Não foi possível atualizar compositor'
+    index:
+      new: 'Cadastrar novo compositor'

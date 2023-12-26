@@ -1,7 +1,7 @@
 <%= form_with model: instrument do |f| %>
   <div class="field row mb-5">
     <div class="col-5 col-form-label">
-      <%= f.label :name, 'Nome do instrumento' %>
+      <%= f.label :name %>
     </div>
     <div class="col-7">
       <div>
@@ -11,10 +11,10 @@
   </div>
 
   <div class="text-center mb-5">
-    <%= f.submit 'Enviar', class: 'btn btn-outline-success' %>
+    <%= f.submit t('helpers.submit.submit'), class: 'btn btn-outline-success' %>
   </div>
 
   <div class="text-center">
-    <%= link_to 'Voltar', instruments_path %>
+    <%= link_to t('helpers.back'), instruments_path %>
   </div>
 <% end %>

@@ -10,6 +10,8 @@ pt-BR:
         start_year: 'Ano aproximado de início'
         end_year: 'Ano aproximado de término'
         notes: 'Notas'
+        created_at: 'Data de registro'
+        updated_at: 'Data da última atualização'
   periods:
     create:
       success: 'Período cadastrado com sucesso'
@@ -17,3 +19,5 @@ pt-BR:
     update:
       success: 'Período atualizado com sucesso'
       failure: 'Não foi possível atualizar período'
+    index:
+      new: 'Cadastrar novo período'

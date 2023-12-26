@@ -19,19 +19,27 @@
         <% end %>
         
         <li class="nav-item">
-          <%= link_to 'Instrumentos', instruments_path, class:'nav-link' %>
+          <%= link_to Instrument.model_name.human(count: :other),
+                      instruments_path,
+                      class:'nav-link' %>
         </li>
 
         <li class="nav-item">
-          <%= link_to 'Períodos', periods_path, class: 'nav-link' %>
+          <%= link_to Period.model_name.human(count: :other),
+                      periods_path,
+                      class: 'nav-link' %>
         </li>
         
         <li class="nav-item">
-          <%= link_to 'Compositores', composers_path, class: 'nav-link' %>
+          <%= link_to Composer.model_name.human(count: :other),
+                      composers_path,
+                      class: 'nav-link' %>
         </li>
 
         <li class="nav-item">
-          <%= link_to 'Músicas', root_path, class: 'nav-link' %>
+          <%= link_to Piece.model_name.human(count: :other),
+                      root_path,
+                      class: 'nav-link' %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

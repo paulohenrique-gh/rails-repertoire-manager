@@ -1,24 +1,29 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Detalhes do instrumento</h1>
+  <h1 class="text-center mb-5">
+    Detalhes do <%= Instrument.model_name.human.downcase %>
+  </h1>
   
   <div class="mb-5">
     <div>
-      <strong>Instrumento: </strong><%= @instrument.name.capitalize %>
+      <strong><%= Instrument.human_attribute_name('name') %>: </strong>
+      <%= @instrument.name.capitalize %>
     </div>
     <div>
-      <strong>Data de registro: </strong><%= l(@instrument.created_at.to_date) %>
+      <strong><%= Instrument.human_attribute_name('created_at') %>: </strong>
+      <%= l(@instrument.created_at.to_date) %>
     </div>
     <div>
-      <strong>Data da última atualização: </strong><%= l(@instrument.updated_at.to_date) %>
+      <strong><%= Instrument.human_attribute_name('updated_at') %>: </strong>
+      <%= l(@instrument.updated_at.to_date) %>
     </div>
   </div>
   
   <div class="text-center mb-5">
-    <%= link_to 'Editar', edit_instrument_path(@instrument),
+    <%= link_to t('helpers.edit'), edit_instrument_path(@instrument),
                 class: 'btn btn-outline-success' %>
   </div>
 
   <div class="text-center mb-5">
-    <%= link_to 'Voltar', instruments_path %>
+    <%= link_to t('helpers.back'), instruments_path %>
   </div>
 </div>

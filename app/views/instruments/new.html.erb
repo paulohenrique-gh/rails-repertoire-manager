@@ -1,5 +1,7 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Cadastro de instrumento</h1>
+  <h1 class="text-center mb-5">
+    Cadastro de <%= Instrument.model_name.human.downcase %> 
+  </h1>
 
   <div class="text-center mb-5">
     <%= render partial: 'shared/error_messages',

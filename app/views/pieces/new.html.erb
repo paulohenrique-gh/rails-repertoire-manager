@@ -1,5 +1,7 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Cadastro de música</h1>
+  <h1 class="text-center mb-5">
+    Cadastro de <%= Piece.model_name.human.downcase %>
+  </h1>
 
   <div class="text-center mb-5">
     <%= render partial: 'shared/error_messages',
@@ -9,7 +11,7 @@
   <%= form_with model: @piece do |f| %>
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :title, 'Título' %>
+        <%= f.label :title %>
       </div>
       <div class="col-7">
         <div>
@@ -20,7 +22,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :opus, 'Opus' %>
+        <%= f.label :opus %>
       </div>
       <div class="col-7">
         <div>
@@ -31,7 +33,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :number, 'Número' %>
+        <%= f.label :number %>
       </div>
       <div class="col-7">
         <div>
@@ -42,7 +44,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :movement, 'Movimento' %>
+        <%= f.label :movement %>
       </div>
       <div class="col-7">
         <div>
@@ -53,7 +55,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :other_identifiers, 'Outros identificadores' %>
+        <%= f.label :other_identifiers %>
       </div>
       <div class="col-7">
         <div>
@@ -64,7 +66,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :composer_id, 'Compositor' %>
+        <%= f.label :composer_id %>
       </div>
       <div class="col-7">
         <div>
@@ -75,7 +77,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :period_id, 'Período' %>
+        <%= f.label :period_id %>
       </div>
       <div class="col-7">
         <div>
@@ -86,7 +88,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :instrument_id, 'Instrumento' %>
+        <%= f.label :instrument_id %>
       </div>
       <div class="col-7">
         <div>
@@ -97,7 +99,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :start_date, 'Data inicial' %>
+        <%= f.label :start_date %>
       </div>
       <div class="col-7">
         <div>
@@ -108,7 +110,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :finish_date, 'Data final' %>
+        <%= f.label :finish_date %>
       </div>
       <div class="col-7">
         <div>
@@ -119,7 +121,7 @@
 
     <div class="row mb-3">
       <div class="col-5 col-form-label">
-        <%= f.label :difficulty_level, 'Nível de dificuldade' %>
+        <%= f.label :difficulty_level %>
       </div>
       <div class="col-7">
         <div>
@@ -133,7 +135,7 @@
     </div>
 
     <div class="text-center">
-      <%= link_to 'Voltar', root_path %>
+      <%= link_to t('helpers.back'), root_path %>
     </div>
   <% end %>
 </div>

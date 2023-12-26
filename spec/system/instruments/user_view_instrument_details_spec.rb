@@ -11,7 +11,7 @@ describe 'User views instrument details page' do
     click_on 'Instrumentos'
     click_on 'Guitarra'
 
-    expect(page).to have_content 'Instrumento: Guitarra'
+    expect(page).to have_content 'Nome do instrumento: Guitarra'
     expect(page).to have_content(
       "Data de registro: #{I18n.localize(instrument.created_at.to_date)}"
     )

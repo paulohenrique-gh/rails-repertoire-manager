@@ -1,33 +1,41 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Detalhes do período</h1>
+  <h1 class="text-center mb-5">
+    Detalhes do <%= Period.model_name.human.downcase %>
+  </h1>
 
   <div class="mb-5">
     <div>
-      <strong>Período: </strong><%= @period.name.capitalize %>
+      <strong><%= Period.human_attribute_name('name') %>: </strong>
+      <%= @period.name.capitalize %>
     </div>
     <div>
-      <strong>Ano aproximado de início: </strong><%= @period.start_year %>
+      <strong><%= Period.human_attribute_name('start_year') %>: </strong>
+      <%= @period.start_year %>
     </div>
     <div>
-      <strong>Ano aproximado de término: </strong><%= @period.end_year %>
+      <strong><%= Period.human_attribute_name('end_year') %>: </strong>
+      <%= @period.end_year %>
     </div>
     <div>
-      <strong>Notas: </strong><%= @period.notes %>
+      <strong><%= Period.human_attribute_name('notes') %>: </strong>
+      <%= @period.notes %>
     </div>
     <div>
-      <strong>Data de registro: </strong><%= l(@period.created_at.to_date) %>
+      <strong><%= Period.human_attribute_name('created_at') %>: </strong>
+      <%= l(@period.created_at.to_date) %>
     </div>
     <div>
-      <strong>Data da última atualização: </strong><%= l(@period.updated_at.to_date) %>
+      <strong><%= Period.human_attribute_name('updated_at') %>: </strong>
+      <%= l(@period.updated_at.to_date) %>
     </div>
   </div>
 
   <div class="text-center mb-5">
-    <%= link_to 'Editar', edit_period_path(@period),
+    <%= link_to t('helpers.edit'), edit_period_path(@period),
                 class: 'btn btn-outline-success' %>
   </div>
 
   <div class="text-center mb-5">
-    <%= link_to 'Voltar', periods_path %>
+    <%= link_to t('helpers.back'), periods_path %>
   </div>
 </div>

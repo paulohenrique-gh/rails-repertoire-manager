@@ -7,6 +7,8 @@ pt-BR:
     attributes:
       instrument:
         name: 'Nome do instrumento'
+        created_at: 'Data de registro'
+        updated_at: 'Data da última atualização'
   instruments:
     create:
       success: 'Instrumento cadastrado com sucesso'
@@ -14,3 +16,5 @@ pt-BR:
     update:
       success: 'Instrumento atualizado com sucesso'
       failure: 'Não foi possível atualizar instrumento'
+    index:
+      new: 'Cadastrar novo instrumento'

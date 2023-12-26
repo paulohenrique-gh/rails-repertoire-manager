@@ -1,4 +1,6 @@
-<h1 class="text-center mb-5">Instrumentos Cadastrados</h1>
+<h1 class="text-center mb-5">
+  <%= Instrument.model_name.human(count: :other) %> Cadastrados
+</h1>
 
 <% if @instruments.any? %>
   <ul class="instrument-list">
@@ -7,9 +9,11 @@
     <% end %>
   </ul>
 <% else %>
-  <p class="text-center mb-5">Nenhum instrumento cadastrado</p>
+  <p class="text-center mb-5">
+    Nenhum <%= Instrument.model_name.human.downcase %> cadastrado
+  </p>
 <% end %>
 <div class="text-center mb-5">
-  <%= link_to 'Cadastrar novo instrumento', new_instrument_path,
+  <%= link_to t('.new'), new_instrument_path,
               class: 'btn btn-outline-success btn-sm' %>
 </div>

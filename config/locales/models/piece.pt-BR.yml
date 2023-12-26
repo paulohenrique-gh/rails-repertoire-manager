@@ -4,3 +4,16 @@ pt-BR:
       piece:
         one: 'Música'
         other: 'Músicas'
+    attributes:
+      piece:
+        title: 'Título'
+        opus: 'Opus'
+        number: 'Número'
+        movement: 'Movimento'
+        other_identifiers: 'Outros identificadores'
+        composer_id: 'Compositor'
+        period_id: 'Período'
+        instrument_id: 'Instrumento'
+        start_date: 'Data inicial'
+        finish_date: 'Data final'
+        difficulty_level: 'Nível de dificuldade'

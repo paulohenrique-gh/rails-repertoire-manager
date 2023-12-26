@@ -13,7 +13,7 @@ describe 'User views period details' do
     click_on 'Clássico (1730 - 1820)'
 
     expect(page).to have_content 'Detalhes do período'
-    expect(page).to have_content 'Período: Clássico'
+    expect(page).to have_content 'Nome do período: Clássico'
     expect(page).to have_content 'Ano aproximado de início: 1730'
     expect(page).to have_content 'Ano aproximado de término: 1820'
     expect(page).to have_content 'Notas: Período de Beethoven e Mozart'

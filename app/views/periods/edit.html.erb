@@ -1,5 +1,7 @@
 <div class="container w-50">
-  <h1 class="text-center mb-5">Edição de período</h1>
+  <h1 class="text-center mb-5">
+    Edição de <%= Period.model_name.human.downcase %>
+  </h1>
 
   <div class="text-center mb-5">
     <%= render partial: 'shared/error_messages', 
