@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_24_125803) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_27_132540) do
   create_table "composers", force: :cascade do |t|
     t.string "name"
     t.text "notes"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_125803) do
     t.integer "composer_id", null: false
     t.integer "period_id", null: false
     t.date "start_date", null: false
-    t.date "finish_date", null: false
+    t.date "finish_date"
     t.integer "instrument_id", null: false
     t.integer "difficulty_level"
     t.string "opus"
@@ -55,9 +55,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_125803) do
     t.string "other_identifiers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
     t.index ["composer_id"], name: "index_pieces_on_composer_id"
     t.index ["instrument_id"], name: "index_pieces_on_instrument_id"
     t.index ["period_id"], name: "index_pieces_on_period_id"
+    t.index ["user_id"], name: "index_pieces_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,4 +82,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_24_125803) do
   add_foreign_key "pieces", "composers"
   add_foreign_key "pieces", "instruments"
   add_foreign_key "pieces", "periods"
+  add_foreign_key "pieces", "users"
 end

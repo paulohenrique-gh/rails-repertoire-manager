@@ -17,3 +17,7 @@ pt-BR:
         start_date: 'Data inicial'
         finish_date: 'Data final'
         difficulty_level: 'Nível de dificuldade'
+  pieces:
+    create:
+      success: 'Música cadastrada com sucesso'
+      failure: 'Não foi possível cadastrar música'

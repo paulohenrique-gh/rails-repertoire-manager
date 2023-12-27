@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :instruments, only: [:index, :show, :new, :create, :edit, :update]
   resources :periods, only: [:index, :show, :new, :create, :edit, :update]
   resources :composers, only: [:index, :show, :new, :create, :edit, :update]
-  resources :pieces, only: [:new, :create]
+  resources :pieces, only: [:index, :new, :create]
 end
