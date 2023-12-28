@@ -62,4 +62,12 @@ RSpec.describe Period, type: :model do
       end
     end
   end
+
+  context '#title_name' do
+    it 'returns titleized string' do
+      period = Period.new(name: 'período barroco')
+
+      expect(period.title_name).to eq 'Período Barroco'
+    end
+  end
 end

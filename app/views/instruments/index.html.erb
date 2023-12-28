@@ -2,6 +2,8 @@
   <%= Instrument.model_name.human(count: :other) %> Cadastrados
 </h1>
 
+<%= turbo_frame_tag Instrument.new %>
+
 <% if @instruments.any? %>
   <ul class="instrument-list">
     <% @instruments.each do |i| %>
@@ -14,6 +16,8 @@
   </p>
 <% end %>
 <div class="text-center mb-5">
-  <%= link_to t('.new'), new_instrument_path,
+  <%= link_to t('.new'),
+              new_instrument_path,
+              data: { turbo_frame: dom_id(Instrument.new)},
               class: 'btn btn-outline-success btn-sm' %>
 </div>

@@ -22,4 +22,12 @@ RSpec.describe Composer, type: :model do
       expect(composer).to be_valid
     end
   end
+
+  context '#title_name' do
+    it 'returns titleized string' do
+      composer = Composer.new(name: 'ludwig van beethoven')
+
+      expect(composer.title_name).to eq 'Ludwig Van Beethoven'
+    end
+  end
 end

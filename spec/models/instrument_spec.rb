@@ -18,4 +18,12 @@ RSpec.describe Instrument, type: :model do
       expect(instrument).to be_valid
     end
   end
+
+  context '#title_name' do
+    it 'returns titleized string' do
+      instrument = Instrument.new(name: 'piano de cauda')
+
+      expect(instrument.title_name).to eq 'Piano De Cauda'
+    end
+  end
 end

@@ -9,12 +9,12 @@
       </div>
     </div>
   </div>
-
-  <div class="text-center mb-5">
-    <%= f.submit t('helpers.submit.submit'), class: 'btn btn-outline-success' %>
-  </div>
-
-  <div class="text-center">
-    <%= link_to t('helpers.back'), instruments_path %>
+  <div class="row">
+    <div class="text-center mb-5 col-6">
+      <%= link_to 'Cancelar', instruments_path, class: 'btn btn-outline-danger' %>
+    </div>
+    <div class="text-center mb-5 col-6">
+      <%= f.submit t('helpers.submit.submit'), class: 'btn btn-outline-success' %>
+    </div>
   </div>
 <% end %>

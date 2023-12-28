@@ -8,5 +8,11 @@
                locals: { resource: @instrument } %>
   </div>
 
-  <%= render partial: 'form', locals: { instrument: @instrument } %> 
+  <%= turbo_frame_tag @instrument  do %>
+    <%= render partial: 'form', locals: { instrument: @instrument } %> 
+  <% end %>
+
+  <div class="text-center">
+    <%= link_to t('helpers.back'), instruments_path %>
+  </div>
 </div>
