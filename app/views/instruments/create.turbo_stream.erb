@@ -1,0 +1,5 @@
+<%= turbo_stream.append 'instruments' do %>
+  <li><%= link_to @instrument.name.capitalize, @instrument %></li>
+<% end %>
+
+<%= turbo_stream.update Instrument.new, '' %>

@@ -8,7 +8,7 @@
                locals: { resource: @instrument } %>
   </div>
 
-  <%= turbo_frame_tag @instrument  do %>
+  <%= turbo_frame_tag @instrument do %>
     <%= render partial: 'form', locals: { instrument: @instrument } %> 
   <% end %>
 

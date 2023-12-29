@@ -17,7 +17,10 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
     if @instrument.save
-      redirect_to instruments_path, notice: t('.success')
+      respond_to do |format|
+        format.html { redirect_to instruments_path, notice: t('.success') }
+        format.turbo_stream { flash.now[:notice] = t('.success') }
+      end
     else
       flash.now[:alert] = t('.failure')
       render :new, status: :unprocessable_entity
