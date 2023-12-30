@@ -1,5 +1,38 @@
+.instrument-turbo-form {
+  width: 50%;
+  margin: 10px auto;
+}
+
 .instrument-list, .period-list, .composer-list {
+  list-style: none;
+  margin: 0 auto;
   min-height: 600px;
-  columns: 2;
-  list-style: none
+  padding-left: 0;
+  text-align: left;
+  width: 50%;
+}
+
+.instrument-list--item {
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.instrument-list--item a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.instrument-list--item .btn {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.instrument-list--item .btn-outline-danger {
+  color: #dc3545;
+}
+
+.instrument-list--item .btn-outline-success {
+  color: #198754;
 }

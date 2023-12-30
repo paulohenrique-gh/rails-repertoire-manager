@@ -2,16 +2,18 @@
   <%= Instrument.model_name.human(count: :other) %> Cadastrados
 </h1>
 
-<%= turbo_frame_tag Instrument.new %>
 
 <% if @instruments.any? %>
-    <ul class="instrument-list">
-      <%= turbo_frame_tag "instruments" do %>
-        <% @instruments.each do |i| %>
-          <li><%= link_to i.name.capitalize, i %></li>
-        <% end %>
+  <div class="instrument-turbo-form">
+    <%= turbo_frame_tag Instrument.new %>
+  </div>
+  <ul class="instrument-list">
+    <%= turbo_frame_tag "instruments" do %>
+      <% @instruments.each do |i| %>
+        <%= render i %>
       <% end %>
-    </ul>
+    <% end %>
+  </ul>
 <% else %>
   <p class="text-center mb-5">
     Nenhum <%= Instrument.model_name.human.downcase %> cadastrado

@@ -1,5 +1,7 @@
 <%= turbo_stream.append 'instruments' do %>
-  <li><%= link_to @instrument.name.capitalize, @instrument %></li>
+  <%= render @instrument %>
 <% end %>
 
 <%= turbo_stream.update Instrument.new, '' %>
+
+<%= turbo_stream.replace "flash", partial: "layouts/flash" %>

@@ -13,13 +13,8 @@
   <body>
     <%= render 'layouts/navbar' %>
     <main class="container">
-      <div>
-        <% if flash[:alert] %>
-          <div class="alert alert-warning"><%= alert %></div>
-        <% end %>
-        <% if flash[:notice] %>
-          <div class="alert alert-success"><%= notice %></div>
-        <% end %>
+      <div id="flash">
+        <%= render 'layouts/flash' %>
       </div>
       <div class="container">
         <%= yield %>

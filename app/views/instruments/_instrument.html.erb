@@ -1,0 +1,11 @@
+<li class="instrument-list--item">
+  <%= turbo_frame_tag instrument do %>
+    <div class="row">
+      <%= link_to instrument.name.capitalize, instrument, class: 'col-6 text-start'%>
+      <div class="col-6 text-end">
+        <%= link_to t('helpers.edit'),
+                      edit_instrument_path(instrument) %>
+      </div>
+    </div>
+  <% end %>
+</li>

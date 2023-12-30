@@ -1,20 +1,24 @@
-<%= form_with model: instrument do |f| %>
-  <div class="field row mb-5">
-    <div class="col-5 col-form-label">
-      <%= f.label :name %>
-    </div>
-    <div class="col-7">
-      <div>
-        <%= f.text_field :name, required: true, class: 'form-control' %>
+<%= turbo_frame_tag instrument do %>
+  <%= form_with model: instrument do |f| %>
+    <div class="field row mb-2">
+      <div class="col-5 col-form-label">
+        <%= f.label :name %>
+      </div>
+      <div class="col-7">
+        <div>
+          <%= f.text_field :name, required: true, class: 'form-control' %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="text-center mb-5 col-6">
-      <%= link_to 'Cancelar', instruments_path, class: 'btn btn-outline-danger' %>
+    <div class="row">
+      <div class="text-center mb-2 col-6">
+        <%= link_to 'Cancelar', instruments_path,
+                    class: 'btn btn-outline-danger btn-sm' %>
+      </div>
+      <div class="text-center mb-2 col-6">
+        <%= f.submit t('helpers.submit.submit'),
+                     class: 'btn btn-outline-success btn-sm'  %>
+      </div>
     </div>
-    <div class="text-center mb-5 col-6">
-      <%= f.submit t('helpers.submit.submit'), class: 'btn btn-outline-success' %>
-    </div>
-  </div>
+  <% end %>
 <% end %>

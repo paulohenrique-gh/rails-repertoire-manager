@@ -2,28 +2,33 @@
   <h1 class="text-center mb-5">
     Detalhes do <%= Instrument.model_name.human.downcase %>
   </h1>
-  
-  <div class="mb-5">
-    <div>
-      <strong><%= Instrument.human_attribute_name('name') %>: </strong>
-      <%= @instrument.name.capitalize %>
-    </div>
-    <div>
-      <strong><%= Instrument.human_attribute_name('created_at') %>: </strong>
-      <%= l(@instrument.created_at.to_date) %>
-    </div>
-    <div>
-      <strong><%= Instrument.human_attribute_name('updated_at') %>: </strong>
-      <%= l(@instrument.updated_at.to_date) %>
-    </div>
-  </div>
-  
-  <div class="text-center mb-5">
-    <%= link_to t('helpers.edit'), edit_instrument_path(@instrument),
-                class: 'btn btn-outline-success' %>
-  </div>
 
-  <div class="text-center mb-5">
-    <%= link_to t('helpers.back'), instruments_path %>
-  </div>
+  <%= turbo_frame_tag @instrument do %> 
+    <div class="mb-2">
+      <div>
+        <strong><%= Instrument.human_attribute_name('name') %>: </strong>
+        <%= @instrument.name.capitalize %>
+      </div>
+      <div>
+        <strong><%= Instrument.human_attribute_name('created_at') %>: </strong>
+        <%= l(@instrument.created_at.to_date) %>
+      </div>
+      <div>
+        <strong><%= Instrument.human_attribute_name('updated_at') %>: </strong>
+        <%= l(@instrument.updated_at.to_date) %>
+      </div>
+    </div>
+    
+    <div class="row mb-2">
+      <div class="text-center col-6">
+        <%= link_to t('helpers.back'), instruments_path,
+                    class: 'btn btn-outline-danger btn-sm' %>
+      </div>
+      <div class="text-center col-6">
+        <%= link_to t('helpers.edit'), edit_instrument_path(@instrument),
+                    class: 'btn btn-outline-success btn-sm' %>
+      </div>
+    </div>
+  <% end %>
+
 </div>
