@@ -1,3 +1,9 @@
+.flash {
+  max-width: 20%;
+  margin-left: 25px;
+  position: absolute;
+}
+
 .instrument-turbo-form {
   width: 50%;
   margin: 10px auto;

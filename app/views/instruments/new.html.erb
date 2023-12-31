@@ -3,12 +3,12 @@
     Cadastro de <%= Instrument.model_name.human.downcase %> 
   </h1>
 
-  <div class="text-center mb-5">
-    <%= render partial: 'shared/error_messages',
-               locals: { resource: @instrument } %>
-  </div>
 
   <%= turbo_frame_tag @instrument do %>
+    <div class="text-center mb-5">
+      <%= render partial: 'shared/error_messages',
+                locals: { resource: @instrument } %>
+    </div>
     <%= render partial: 'form', locals: { instrument: @instrument } %> 
   <% end %>
 
