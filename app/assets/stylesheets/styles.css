@@ -4,6 +4,10 @@
   position: absolute;
 }
 
+.error_messages {
+  color: rgb(202, 66, 66)
+}
+
 .instrument-turbo-form {
   width: 50%;
   margin: 10px auto;

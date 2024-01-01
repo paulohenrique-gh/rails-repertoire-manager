@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div data-controller="autohide">
+  <div>
     <ul class="alert alert-warning" style="list-style: none">
       <% resource.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

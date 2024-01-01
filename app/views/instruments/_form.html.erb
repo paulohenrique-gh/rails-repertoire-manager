@@ -1,4 +1,7 @@
 <%= turbo_frame_tag instrument do %>
+  <%= render partial: 'shared/error_messages',
+                locals: { resource: @instrument } %>
+
   <%= form_with model: instrument do |f| %>
     <div class="field row mb-2">
       <div class="col-5 col-form-label">

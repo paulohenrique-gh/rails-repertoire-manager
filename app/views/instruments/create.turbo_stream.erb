@@ -1,5 +1,7 @@
 <%= turbo_stream.append 'instruments' do %>
-  <%= render @instrument %>
+  <li class="instrument-list--item">
+    <%= render @instrument %>
+  </li>
 <% end %>
 
 <%= turbo_stream.update Instrument.new, '' %>

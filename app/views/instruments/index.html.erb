@@ -7,11 +7,13 @@
   <div class="instrument-turbo-form">
     <%= turbo_frame_tag Instrument.new %>
   </div>
-  <ul class="instrument-list">
-    <%= turbo_frame_tag "instruments" do %>
-      <% @instruments.each do |i| %>
-        <%= render i %>
-      <% end %>
+  <ul class="instrument-list" id="instruments">
+    <% @instruments.each do |i| %>
+      <li class="instrument-list--item">
+        <%= turbo_frame_tag i do %>
+          <%= render i %>
+        <% end %>
+      </li>
     <% end %>
   </ul>
 <% else %>
