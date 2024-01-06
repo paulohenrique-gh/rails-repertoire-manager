@@ -8,5 +8,7 @@
                locals: { resource: @period } %>
   </div>
   
-  <%= render partial: 'form', locals: { period: @period } %>
+  <%= turbo_frame_tag @period do %>
+    <%= render partial: 'form', locals: { period: @period } %>
+  <% end %>
 </div>

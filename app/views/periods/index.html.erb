@@ -3,9 +3,12 @@
 </h1>
 
 <% if @periods.any? %>
+  <div class="period-turbo-form">
+    <%= turbo_frame_tag Period.new %>
+  </div>
   <ul class="period-list">
     <% @periods.each do |p| %>
-      <li>
+      <li class="period-list--item">
         <%= link_to "#{p.name.titleize} (#{p.start_year} - #{p.end_year})", p %>
       </li>
     <% end %>
@@ -16,6 +19,8 @@
   </p>
 <% end %>
 <div class="text-center mb-5">
-  <%= link_to t('.new'), new_period_path, 
+  <%= link_to t('.new'),
+              new_period_path,
+              data: { turbo_frame: dom_id(Period.new) },
               class: 'btn btn-outline-success btn-sm' %>
 </div>

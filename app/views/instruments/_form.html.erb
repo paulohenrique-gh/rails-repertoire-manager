@@ -1,4 +1,4 @@
-<%= turbo_frame_tag instrument do %>
+
   <%= render partial: 'shared/error_messages',
                 locals: { resource: @instrument } %>
 
@@ -15,7 +15,9 @@
     </div>
     <div class="row">
       <div class="text-center mb-2 col-6">
-        <%= link_to 'Cancelar', instruments_path,
+        <%= link_to 'Cancelar',
+                    instruments_path,
+                    data: { turbo_frame: '_top' },
                     class: 'btn btn-outline-danger btn-sm' %>
       </div>
       <div class="text-center mb-2 col-6">
@@ -24,4 +26,3 @@
       </div>
     </div>
   <% end %>
-<% end %>
