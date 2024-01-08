@@ -3,39 +3,46 @@
     Detalhes do <%= Period.model_name.human.downcase %>
   </h1>
 
-  <div class="mb-5">
-    <div>
-      <strong><%= Period.human_attribute_name('name') %>: </strong>
-      <%= @period.name.capitalize %>
+  <%= turbo_frame_tag @period do %>
+    <div class="mb-5">
+      <div>
+        <strong><%= Period.human_attribute_name('name') %>: </strong>
+        <%= @period.name.capitalize %>
+      </div>
+      <div>
+        <strong><%= Period.human_attribute_name('start_year') %>: </strong>
+        <%= @period.start_year %>
+      </div>
+      <div>
+        <strong><%= Period.human_attribute_name('end_year') %>: </strong>
+        <%= @period.end_year %>
+      </div>
+      <div>
+        <strong><%= Period.human_attribute_name('notes') %>: </strong>
+        <%= @period.notes %>
+      </div>
+      <div>
+        <strong><%= Period.human_attribute_name('created_at') %>: </strong>
+        <%= l(@period.created_at.to_date) %>
+      </div>
+      <div>
+        <strong><%= Period.human_attribute_name('updated_at') %>: </strong>
+        <%= l(@period.updated_at.to_date) %>
+      </div>
     </div>
-    <div>
-      <strong><%= Period.human_attribute_name('start_year') %>: </strong>
-      <%= @period.start_year %>
-    </div>
-    <div>
-      <strong><%= Period.human_attribute_name('end_year') %>: </strong>
-      <%= @period.end_year %>
-    </div>
-    <div>
-      <strong><%= Period.human_attribute_name('notes') %>: </strong>
-      <%= @period.notes %>
-    </div>
-    <div>
-      <strong><%= Period.human_attribute_name('created_at') %>: </strong>
-      <%= l(@period.created_at.to_date) %>
-    </div>
-    <div>
-      <strong><%= Period.human_attribute_name('updated_at') %>: </strong>
-      <%= l(@period.updated_at.to_date) %>
-    </div>
-  </div>
 
-  <div class="text-center mb-5">
-    <%= link_to t('helpers.edit'), edit_period_path(@period),
-                class: 'btn btn-outline-success' %>
-  </div>
-
-  <div class="text-center mb-5">
-    <%= link_to t('helpers.back'), periods_path %>
-  </div>
+    <div class="row mb-2">
+      <div class="text-center col-6">
+        <%= link_to t('helpers.back'),
+                    periods_path,
+                    data: { turbo_frame: '_top' },
+                    class: 'btn btn-outline-danger' %>
+      </div>
+      <div class="text-center col-6">
+        <%= link_to t('helpers.edit'),
+                    edit_period_path(@period),
+                    class: 'btn btn-outline-success' %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -6,14 +6,16 @@
   <div class="period-turbo-form">
     <%= turbo_frame_tag Period.new %>
   </div>
-  <ul class="period-list">
+  <ul class="period-list" id="periods">
     <% @periods.each do |p| %>
       <li class="period-list--item">
-        <%= link_to "#{p.name.titleize} (#{p.start_year} - #{p.end_year})", p %>
+        <%= turbo_frame_tag p do %>
+          <%= render p %>
+        <% end %>
       </li>
     <% end %>
   </ul>
-<% else%>
+<% else %>
   <p class="text-center mb-5">
     Nenhum <%= Period.model_name.human.downcase %> cadastrado
   </p>

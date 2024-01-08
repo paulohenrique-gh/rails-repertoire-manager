@@ -1,0 +1,9 @@
+<%= turbo_stream.append 'periods' do %>
+  <li class="period-list--item">
+    <%= render @period %>
+  </li>
+<% end %>
+
+<%= turbo_stream.update Period.new, '' %>
+
+<%= turbo_stream.append 'flash', partial: 'layouts/flash' %>

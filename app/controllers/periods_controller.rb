@@ -17,7 +17,10 @@ class PeriodsController < ApplicationController
     @period = Period.new(period_params)
     @period.user = current_user
     if @period.save
-      redirect_to periods_path, notice: t('.success')
+      respond_to do |format|
+        format.html { redirect_to period_path, notice: t('.success')}
+        format.turbo_stream { flash.now[:notice] = t('.success') }
+      end
     else
       flash.now[:alert] = t('.failure')
       render :new, status: :unprocessable_entity
