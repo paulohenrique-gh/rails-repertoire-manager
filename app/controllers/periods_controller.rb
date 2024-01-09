@@ -32,7 +32,10 @@ class PeriodsController < ApplicationController
 
   def update
     if @period.update(period_params)
-      redirect_to periods_path, notice: t('.success')
+      respond_to do |format|
+        format.html { redirect_to instruments_path, notice: t('.success')}
+        format.turbo_stream { flash.now[:notice] = t('.success')}
+      end
     else
       flash.now[:alert] = t('.failure')
       render :edit, status: :unprocessable_entity

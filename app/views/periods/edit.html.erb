@@ -4,9 +4,11 @@
   </h1>
 
   <div class="text-center mb-5">
-    <%= render partial: 'shared/error_messages', 
+    <%#= render partial: 'shared/error_messages', 
                locals: { resource: @period } %>
   </div>
 
-  <%= render partial: 'form', locals: { period: @period } %>
+  <%= turbo_frame_tag @period do %>
+    <%= render partial: 'form', locals: { period: @period } %>
+  <% end %>
 </div>

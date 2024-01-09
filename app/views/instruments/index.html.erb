@@ -2,7 +2,6 @@
   <%= Instrument.model_name.human(count: :other) %> Cadastrados
 </h1>
 
-
 <% if @instruments.any? %>
   <div class="instrument-turbo-form">
     <%= turbo_frame_tag Instrument.new %>

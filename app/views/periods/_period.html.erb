@@ -2,4 +2,7 @@
   <%= link_to "#{period.name.titleize} (#{period.start_year} - #{period.end_year})",
               period,
               class: 'col-6 text-start' %>
+  <%= link_to t('helpers.edit'),
+              edit_period_path(period),
+              class: 'col-6 text-end' %>
 </div>
