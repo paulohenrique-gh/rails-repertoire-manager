@@ -28,6 +28,7 @@ Os usuários podem cadastrar músicas na plataforma. O formulário deverá conte
   - Período (obrigatório)
   - Data de início (opcional)
   - Data de término (opcional)
+  - Nível de dificuldade
   - Incluir no repertório (opcional)
 
 Os campos Compostor, Instrumento e Período devem ser carregados das informações pré-cadastradas na plataforma. Caso o usuário não encontre o que procura nessas opções, ele deverá ser capaz de cadastrar no mesmo formulário.
