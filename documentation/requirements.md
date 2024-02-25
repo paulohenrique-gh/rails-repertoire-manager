@@ -23,6 +23,9 @@ Usuários podem se cadastrar na aplicação informando nome de usuário, e-mail 
 
 Os usuários podem cadastrar músicas na plataforma. O formulário deverá conter:
   - Título (obrigatório)
+  - Opus
+  - Número
+  - Outros identificadores
   - Compositor (obrigatório)
   - Instrumento (obrigatório)
   - Período (obrigatório)
@@ -30,6 +33,7 @@ Os usuários podem cadastrar músicas na plataforma. O formulário deverá conte
   - Data de término (opcional)
   - Nível de dificuldade
   - Incluir no repertório (opcional)
+  - Observações
 
 Os campos Compostor, Instrumento e Período devem ser carregados das informações pré-cadastradas na plataforma. Caso o usuário não encontre o que procura nessas opções, ele deverá ser capaz de cadastrar no mesmo formulário.
 
