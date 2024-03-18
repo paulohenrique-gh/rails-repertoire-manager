@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-  def index
-  end
+  # Renders the index page
+  def index; end
 end
