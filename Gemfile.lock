@@ -110,11 +110,6 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
-    factory_bot (6.4.6)
-      activesupport (>= 5.0.0)
-    factory_bot_rails (6.4.3)
-      factory_bot (~> 6.4)
-      railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -140,6 +135,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.22.2)
     msgpack (1.7.2)
@@ -272,6 +268,10 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    view_component (3.11.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -301,7 +301,6 @@ DEPENDENCIES
   capybara
   debug
   devise
-  factory_bot_rails
   importmap-rails
   jbuilder
   puma (>= 5.0)
@@ -314,6 +313,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  view_component
   web-console
 
 RUBY VERSION
