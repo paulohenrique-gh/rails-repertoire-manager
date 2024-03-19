@@ -12,3 +12,14 @@ If there's any error running the container, you need to run the following comman
 ```bash
 chmod +x bin/docker-dev-entrypoint
 ```
+
+## Rebuilding the image
+Give permission for running the `dev.sh` file
+```bash
+chmod +x dev.sh
+```
+
+Rebuild the image with the following command:
+```bash
+./dev.sh
+```
