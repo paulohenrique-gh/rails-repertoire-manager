@@ -1,24 +1,25 @@
-# README
+## Build docker image
+```bash
+docker build -f dev.dockerfile -t rep-manager .
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Run container
+```bash
+docker run -p 3000:3000 -v $(pwd):/rails rep-manager
+```
 
-Things you may want to cover:
+If there's any error running the container, you need to run the following command to allow docker to execute the entrypoint file:
+```bash
+chmod +x bin/docker-dev-entrypoint
+```
 
-* Ruby version
+## Rebuilding the image
+Give permission for running the `dev.sh` file
+```bash
+chmod +x dev.sh
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rebuild the image with the following command:
+```bash
+./dev.sh
+```
