@@ -1,3 +1,7 @@
 <% unless current_user.present? %>
   <%= link_to "Cadastre-se", new_user_session_path %>
 <% end %>
+
+<nav>
+  <%= link_to 'Períodos', periods_path %>
+</nav>

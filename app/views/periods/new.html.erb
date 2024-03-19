@@ -1,0 +1,23 @@
+<%= form_with model: @period do |f| %>
+  <div>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :start_year %>
+    <%= f.number_field :start_year, minimum: 1 %>
+  </div>
+
+  <div>
+    <%= f.label :end_year %>
+    <%= f.number_field :end_year, minimum: 1 %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.submit t :submit %>
+<% end %>

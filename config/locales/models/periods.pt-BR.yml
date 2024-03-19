@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      period:
+        one: Período
+        other: Períodos
+    attributes:
+      period:
+        name: Nome
+        start_year: Ano de início
+        end_year: Ano de término
+        description: Descrição
+          
+  periods:
+    create:
+      success: Período cadastrado com sucesso.
