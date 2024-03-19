@@ -10,7 +10,7 @@ pt-BR:
         start_year: Ano de início
         end_year: Ano de término
         description: Descrição
-          
+
   periods:
     create:
       success: Período cadastrado com sucesso.

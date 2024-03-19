@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :period do
-    name { "MyString" }
-    start_year { 1 }
-    end_year { 1 }
-    description { "MyText" }
+    name { 'Clássico' }
+    start_year { 1830 }
+    end_year { 1720 }
+    description { "Período clássico da música" }
   end
 end

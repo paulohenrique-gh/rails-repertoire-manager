@@ -1,5 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require "view_component/test_helpers"
+require "view_component/system_test_helpers"
+require "capybara/rspec"
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -32,6 +36,9 @@ end
 RSpec.configure do |config|
   include Warden::Test::Helpers
   config.include FactoryBot::Syntax::Methods
+  config.include ViewComponent::TestHelpers, type: :component
+  config.include ViewComponent::SystemTestHelpers, type: :component
+  config.include Capybara::RSpecMatchers, type: :component
   config.before(type: :system) do
     driven_by(:rack_test)
   end
