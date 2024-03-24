@@ -2,6 +2,7 @@
 
 class PeriodFormComponent < ViewComponent::Base
   def initialize(period:)
+    super
     @period = period
   end
 end

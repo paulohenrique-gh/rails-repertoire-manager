@@ -44,7 +44,7 @@ describe 'User registers new musical period' do
       login_as user
       visit root_path
       click_on 'Períodos'
-      
+
       expect(page).not_to have_link 'Cadastrar Novo Período'
     end
   end
