@@ -1,2 +1,3 @@
-<%= link_to 'Cadastrar Novo Período', new_period_path %>
-
+<% if current_user.admin? %>
+  <%= link_to 'Cadastrar Novo Período', new_period_path %>
+<% end %>

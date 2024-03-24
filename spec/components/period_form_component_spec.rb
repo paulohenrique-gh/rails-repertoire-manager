@@ -3,14 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe PeriodFormComponent, type: :component do
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
-
   it 'renders the form as expected' do
     period = create(:period, name: 'Romântico', start_year: 1800, end_year: 1850,
                              description: 'Período de Chopin e Schubert')
