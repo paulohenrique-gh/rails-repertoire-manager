@@ -11,9 +11,12 @@ class PeriodsController < ApplicationController
 
   def create
     @period = Period.new(period_params)
-    @period.save
+    if @period.save
+      redirect_to @period, notice: t('.success')
+    end
 
-    redirect_to @period, notice: t('.success')
+    flash[:alert] = 'Não foi possível cadastrar o período'
+    render :new, status: :unprocessable_entity
   end
 
   private

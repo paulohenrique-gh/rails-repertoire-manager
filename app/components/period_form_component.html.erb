@@ -1,3 +1,11 @@
+<% if @period.errors.any? %>
+  <ul>
+    <% @period.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @period do |f| %>
   <div>
     <%= f.label :name %> 

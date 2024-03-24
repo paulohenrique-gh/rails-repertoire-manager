@@ -18,6 +18,23 @@ describe 'User registers new musical period' do
       expect(Period.count).to eq 1
       expect(page).to have_content 'Período cadastrado com sucesso.'
     end
+
+    it 'with blank fields' do
+      user = create(:user, role: :admin)
+
+      login_as user
+      visit new_period_path
+      fill_in 'Nome', with: ''
+      fill_in 'Ano de início', with: ''
+      fill_in 'Ano de término', with: ''
+      click_on 'Salvar'
+
+      expect(Period.count).to eq 0
+      expect(page).to have_content 'Não foi possível cadastrar o período'
+      expect(page).to have_content 'Nome não pode ficar em branco'
+      expect(page).to have_content 'Ano de início não pode ficar em branco'
+      expect(page).to have_content 'Ano de término não pode ficar em branco'
+    end
   end
 
   context 'User role' do
